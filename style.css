@@ -424,6 +424,14 @@ header {
     font-weight: 600;
     color: var(--text-light);
     margin-bottom: 0.3rem;
+    line-height: 1.4;
+}
+
+.company br,
+.date br {
+    display: block;
+    content: "";
+    margin: 0.2rem 0;
 }
 
 .date {
