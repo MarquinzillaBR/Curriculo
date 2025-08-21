@@ -133,8 +133,16 @@ body {
         padding: 1rem 0.5rem !important;
     }
     
-    .qrcode-card, .qrcode-instruction, .qrcode-text {
-        display: none;
+    .qrcode-card {
+        text-align: center;
+        margin: 0 auto;
+        page-break-inside: avoid;
+    }
+    
+    .qrcode {
+        width: 120px !important;
+        height: 120px !important;
+        margin: 0 auto 0.5rem !important;
     }
     
     header {
