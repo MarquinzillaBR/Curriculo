@@ -9,14 +9,15 @@
 }
 
 :root {
-    --primary-color: #2c3e50;
-    --secondary-color: #3498db;
-    --accent-color: #e74c3c;
-    --light-gray: #f5f5f5;
-    --medium-gray: #e0e0e0;
-    --dark-gray: #7f8c8d;
-    --text-color: #333;
-    --text-light: #777;
+    --primary-color: #1a5276; /* Azul mais escuro para um visual mais sóbrio */
+    --secondary-color: #2874a6; /* Azul corporativo */
+    --accent-color: #2e86c1; /* Azul mais claro para destaques */
+    --light-gray: #f8f9f9;
+    --medium-gray: #d6eaf8; /* Azul bem claro para fundos */
+    --dark-gray: #5d6d7e;
+    --text-color: #2c3e50;
+    --text-light: #707b7c;
+    --success-color: #28b463; /* Verde para itens financeiros */
 }
 
 body {
@@ -34,9 +35,10 @@ body {
 
 /* Cabeçalho */
 header {
-    background-color: var(--primary-color);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
     padding: 2rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .header-content {
@@ -44,17 +46,37 @@ header {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .contact-info {
+        text-align: center;
+        margin-top: 1rem;
+    }
+    
+    .contact-info p {
+        justify-content: center;
+    }
 }
 
 .profile h1 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
     color: white;
+    line-height: 1.2;
 }
 
 .tagline {
-    color: var(--medium-gray);
+    color: #e0e0e0;
     font-size: 1.1rem;
+    margin: 0.5rem 0;
+    line-height: 1.4;
 }
 
 .contact-info {
@@ -62,12 +84,13 @@ header {
 }
 
 .contact-info p {
-    margin: 0.3rem 0;
+    margin: 0.5rem 0;
     color: white;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 0.5rem;
+    gap: 0.8rem;
+    font-size: 0.95rem;
 }
 
 .contact-info i {
@@ -96,6 +119,13 @@ header {
 
 .section h2 i {
     color: var(--secondary-color);
+    background: rgba(40, 116, 166, 0.1);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Linha do tempo */
@@ -178,10 +208,12 @@ header {
 }
 
 .skill-category {
-    background: var(--light-gray);
+    background: white;
     padding: 1.2rem;
-    border-radius: 5px;
-    transition: transform 0.3s ease;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: 1px solid var(--medium-gray);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
 .skill-category:hover {
@@ -190,11 +222,23 @@ header {
 }
 
 .skill-category h3 {
-    color: var(--primary-color);
+    color: var(--secondary-color);
     font-size: 1.1rem;
     margin-bottom: 0.8rem;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid var(--medium-gray);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Estilização para a seção financeira */
+.skill-category:nth-child(2) {
+    border-top: 3px solid var(--success-color);
+}
+
+.skill-category:nth-child(2) h3 {
+    color: var(--success-color);
 }
 
 .skill-category ul {
